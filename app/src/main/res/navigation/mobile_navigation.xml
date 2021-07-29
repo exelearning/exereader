@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.exereader.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.exereader.ui.detalles.DetallesFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_detalles" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.exereader.ui.opciones.OpcionesFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_opciones" />
+    <fragment
+        android:id="@+id/nav_ayuda"
+        android:name="com.example.exereader.ui.ayuda.AyudaFragment"
+        android:label="@string/menu_ayuda"
+        tools:layout="@layout/fragment_ayuda" />
+    <fragment
+        android:id="@+id/nav_creditos"
+        android:name="com.example.exereader.ui.creditos.CreditosFragment"
+        android:label="Créditos"
+        tools:layout="@layout/fragment_creditos" />
+    <fragment
+        android:id="@+id/nav_sugerencias"
+        android:name="com.example.exereader.ui.sugerencias.SugerenciasFragment"
+        android:label="Sugerencias"
+        tools:layout="@layout/fragment_sugerencias" />
+    <fragment
+        android:id="@+id/fileChooser"
+        android:name="com.example.exereader.ui.FileChooser"
+        android:label="FileChooser" />
+    <fragment
+        android:id="@+id/fragmentWebview"
+        android:name="com.example.exereader.ui.FragmentWebview"
+        android:label="fragment_fragmen_webview"
+        tools:layout="@layout/fragment_webview" />
+</navigation>
