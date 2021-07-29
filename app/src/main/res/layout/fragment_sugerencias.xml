@@ -40,7 +40,7 @@
             android:contentDescription="@string/floatingButton"
             android:focusable="true"
             android:foregroundGravity="top"
-            android:src="@drawable/ic_outline_email_24"
+            android:src="@drawable/icon_email"
             app:backgroundTint="@color/verde" />
 
         <TextView

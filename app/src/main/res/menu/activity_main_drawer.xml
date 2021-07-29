@@ -5,7 +5,7 @@
     tools:showIn="navigation_view">
     <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_baseline_arrow_forward_24"
+            android:icon="@drawable/icon_home"
             android:title="@string/menu_home" />
 
     <item android:title="@string/contenido">
@@ -14,12 +14,12 @@
                 <item
                     android:id="@+id/nav_gallery"
                     android:enabled="false"
-                    android:icon="@drawable/ic_outline_info_24"
+                    android:icon="@drawable/icon_info"
                     android:title="@string/menu_gallery" />
                 <item
                     android:id="@+id/nav_slideshow"
                     android:enabled="false"
-                    android:icon="@drawable/ic_baseline_construction_24"
+                    android:icon="@drawable/icon_options"
                     android:title="@string/menu_slideshow" />
             </group>
         </menu>
@@ -29,15 +29,15 @@
             <group>
                 <item
                     android:id="@+id/nav_ayuda"
-                    android:icon="@drawable/ic_baseline_help_outline_24"
+                    android:icon="@drawable/icon_help"
                     android:title="@string/menu_ayuda" />
                 <item
                     android:id="@+id/nav_creditos"
-                    android:icon="@drawable/ic_baseline_filter_tilt_shift_24"
+                    android:icon="@drawable/icon_credits"
                     android:title="@string/menu_creditos" />
                 <item
                     android:id="@+id/nav_sugerencias"
-                    android:icon="@drawable/ic_baseline_border_color_24"
+                    android:icon="@drawable/icon_suggest"
                     android:title="@string/nav_sugerencias" />
             </group>
         </menu>

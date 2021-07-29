@@ -72,7 +72,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
                     android:backgroundTint="#000000"
-                    app:icon="@drawable/ic_whatsapp"
+                    app:icon="@drawable/icon_whatsapp"
                     app:iconGravity="textEnd"
                     app:iconPadding="0dp" />
 
@@ -84,7 +84,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
                     android:backgroundTint="#000000"
-                    app:icon="@drawable/ic_baseline_send_24"
+                    app:icon="@drawable/icon_send"
                     app:iconGravity="textEnd"
                     app:iconPadding="0dp" />
 
@@ -97,7 +97,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
                     android:backgroundTint="#000000"
-                    app:icon="@drawable/ic_baseline_share_24"
+                    app:icon="@drawable/icon_share"
                     app:iconGravity="textEnd"
                     app:iconPadding="0dp" />
 
@@ -125,7 +125,7 @@
                 android:layout_marginEnd="15dp"
                 android:insetRight="10dp"
                 android:textAlignment="center"
-                app:icon="@drawable/ic_baseline_delete_outline_24"
+                app:icon="@drawable/icon_delete"
                 app:iconGravity="textEnd"
                 app:iconPadding="0dp" />
 
