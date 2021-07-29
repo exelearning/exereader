@@ -12,7 +12,7 @@
     <string name="Ayuda">Help</string>
     <string name="wha">WhatsApp</string>
     <string name="correo">Email</string>
-    <string name="licencia">License</string>
+    <string name="licencia">License:</string>
     <string name="te">Telegram</string>
     <string name="otros">Others</string>
     <string name="floatingButton">Email</string>
