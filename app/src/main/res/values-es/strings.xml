@@ -7,8 +7,8 @@
     <string name="action_settings">Ajustes</string>
     <string name="menu_gallery">Detalles</string>
     <string name="menu_ayuda">Ayuda</string>
-    <string name="autor">Autoría</string>
-    <string name="descripcion">Descripción</string>
+    <string name="autor">Autoría:</string>
+    <string name="descripcion">Descripción:</string>
     <string name="Ayuda">Ayuda</string>
     <string name="wha">WhatsApp</string>
     <string name="correo">Email</string>
@@ -26,11 +26,11 @@
     <string name="button">Buscar archivo</string>
     <string name="text_archivos">Contenidos recientes</string>
     <string name="tituloAyuda">Ayuda</string>
-    <string name="titulo">Título</string>
+    <string name="titulo">Título:</string>
     <string name="imagen">Imagen del contenido</string>
     <string name="anterior">Anterior</string>
     <string name="siguiente">Siguiente</string>
-    <string name="idioma">Idioma</string>
+    <string name="idioma">Idioma:</string>
     <string name="tit">Sugerencias</string>
     <string name="compartir">Compartir:</string>
     <string name="borrar">Borrar:</string>
