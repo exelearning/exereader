@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "938862576863",
+    "firebase_url": "https://exereader-41c9d-default-rtdb.firebaseio.com",
+    "project_id": "exereader-41c9d",
+    "storage_bucket": "exereader-41c9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938862576863:android:c22f8f8e4ed27f60db556a",
+        "android_client_info": {
+          "package_name": "com.example.exereader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938862576863-ir5fs183r4hehlfgkdqqkhl8vmvu8kc4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj1TN6OZX2o4NaLY5Yr7mqjXGBYuspe3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938862576863-ir5fs183r4hehlfgkdqqkhl8vmvu8kc4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

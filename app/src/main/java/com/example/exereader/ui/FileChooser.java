@@ -189,7 +189,7 @@ public class FileChooser extends Fragment {
         } catch (Exception e) {
             e.printStackTrace();
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setMessage("Archivo no compatible con ExeReader.").setTitle("Error")
+            builder.setMessage("Archivo incompatible con eXeReader.").setTitle("Error")
                     .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
             builder.show();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

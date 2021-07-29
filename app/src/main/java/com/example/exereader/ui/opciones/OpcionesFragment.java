@@ -90,7 +90,7 @@ public class OpcionesFragment extends Fragment implements View.OnClickListener {
             case R.id.face:
                 Intent intent = new Intent(android.content.Intent.ACTION_SEND);
                 intent.setType("application/zip");
-                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Proyecto enviado desde ExeReader");//se usará por ejemplo para email
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Proyecto enviado desde eXeReader");//se usará por ejemplo para email
                 intent.putExtra(Intent.EXTRA_STREAM, uri);
                 getActivity().startActivity(Intent.createChooser(intent, "Compartir usando..."));
                 break;
@@ -99,9 +99,9 @@ public class OpcionesFragment extends Fragment implements View.OnClickListener {
                 //Pedir confirmación antes de eliminar un proyecto.
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle("Confirmación");
-                builder.setMessage("Se van a eliminar un proyecto almacenado en la aplicación. ¿Correcto?");
+                builder.setMessage("Eliminar el contenido de la aplicación. ¿Continuar?");
                 //Si el usuario pulsa en si, procedemos a borrar el contenido.
-                builder.setPositiveButton("Si", (dialog, which) -> {
+                builder.setPositiveButton("Sí", (dialog, which) -> {
                     borrarApp(f);
                     ClaseSharedPreferences.eliminarDatos(getContext(), "cambio");
                     ClaseSharedPreferences.guardarDatos(getContext(),"cambio","no");
