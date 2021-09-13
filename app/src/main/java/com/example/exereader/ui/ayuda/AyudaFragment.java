@@ -28,10 +28,10 @@ public class AyudaFragment extends Fragment {
         web = view.findViewById(R.id.web);
         String idioma =  Locale.getDefault().getLanguage(); // es
         web.setWebViewClient(new WebViewClient());
-        if(idioma.equalsIgnoreCase("es")){
-            web.loadUrl("file:///android_asset/ayuda.html");
-        }else{
+        if(!idioma.equalsIgnoreCase("es")){
             web.loadUrl("file:///android_asset/ayuda_en.html");
+        }else{
+            web.loadUrl("file:///android_asset/ayuda.html");
         }
 
         return view;

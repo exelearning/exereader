@@ -27,10 +27,10 @@ public class CreditosFragment extends Fragment {
         web = view.findViewById(R.id.web);
         String idioma =  Locale.getDefault().getLanguage(); // es
         web.setWebViewClient(new WebViewClient());
-        if(idioma.equalsIgnoreCase("es")){
-            web.loadUrl("file:///android_asset/creditos.html");
-        }else{
+        if(!idioma.equalsIgnoreCase("es")){
             web.loadUrl("file:///android_asset/creditos_en.html");
+        }else{
+            web.loadUrl("file:///android_asset/creditos.html");
         }
 
         return view;

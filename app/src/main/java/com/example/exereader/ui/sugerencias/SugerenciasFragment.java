@@ -26,14 +26,14 @@ public class SugerenciasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_creditos, container, false);
-        web = view.findViewById(R.id.web);
+        View view = inflater.inflate(R.layout.fragment_sugerencias, container, false);
+        web = view.findViewById(R.id.webV);
         String idioma =  Locale.getDefault().getLanguage(); // es
         web.setWebViewClient(new WebViewClient());
-        if(idioma.equalsIgnoreCase("es")){
-            web.loadUrl("file:///android_asset/sugerencias.html");
-        }else{
+        if(!idioma.equalsIgnoreCase("es")){
             web.loadUrl("file:///android_asset/sugerencias_en.html");
+        }else{
+            web.loadUrl("file:///android_asset/sugerencias.html");
         }
         return view;
     }

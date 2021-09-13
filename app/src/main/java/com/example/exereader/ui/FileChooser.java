@@ -38,6 +38,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -47,6 +48,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class FileChooser extends Fragment {
     private WebView webView;
     private String titulo="";
+    String idioma =  Locale.getDefault().getLanguage(); // es
 
 
     public static FileChooser newInstance(String uri, String param2) {
@@ -96,7 +98,11 @@ public class FileChooser extends Fragment {
         Intent selector = new Intent(Intent.ACTION_GET_CONTENT);
         selector.setType("application/zip");
         selector.addCategory(Intent.CATEGORY_OPENABLE);
-        selector = Intent.createChooser(selector, "Seleccione un archivo");
+        if(!idioma.equalsIgnoreCase("es")) {
+            selector = Intent.createChooser(selector, "Select a file");
+        }else{
+            selector = Intent.createChooser(selector, "Seleccione un archivo");
+        }
         //Utilizamos el método que lanza el intent, el cual espera una seleccion del usuario,
         //para poder trabajar con él en el método de Android - onActivityResult
         startActivityForResult(selector, 2000);
@@ -189,8 +195,13 @@ public class FileChooser extends Fragment {
         } catch (Exception e) {
             e.printStackTrace();
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setMessage("Archivo incompatible con eXeReader.").setTitle("Error")
-                    .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+            if(!idioma.equalsIgnoreCase("es")){
+                builder.setMessage("File incompatible with eXeReader.").setTitle("Error")
+                        .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+            }else {
+                builder.setMessage("Archivo incompatible con eXeReader.").setTitle("Error")
+                        .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+            }
             builder.show();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

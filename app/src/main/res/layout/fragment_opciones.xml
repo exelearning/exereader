@@ -55,39 +55,36 @@
         android:layout_gravity="center"
         android:gravity="center">
 
-        <Button
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/wha"
-            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/verde"
             app:icon="@drawable/icon_whatsapp"
             app:iconGravity="textEnd"
             app:iconPadding="0dp" />
 
-        <Button
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/te"
-            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/verde"
             app:icon="@drawable/icon_send"
             app:iconGravity="textEnd"
             app:iconPadding="0dp" />
 
-        <Button
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/face"
-            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/verde"
             app:icon="@drawable/icon_share"
             app:iconGravity="textEnd"
             app:iconPadding="0dp" />
@@ -101,23 +98,30 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/borrar"
         android:textColor="#000000"
         android:textColorHint="#000000"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/borrarApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:insetRight="10dp"
-        android:textAlignment="center"
-        app:icon="@drawable/icon_delete"
-        app:iconGravity="textEnd"
-        app:iconPadding="0dp" />
+        android:layout_marginTop="15dp"
+        android:gravity="center|top">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/borrarApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/verde"
+            app:icon="@drawable/icon_delete"
+            app:iconGravity="textEnd"
+            app:iconPadding="0dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

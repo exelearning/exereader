@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         tools:context=".ui.informacion.InformacionFragment">
 
         <ImageView

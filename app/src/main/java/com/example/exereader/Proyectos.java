@@ -22,25 +22,15 @@ public class Proyectos {
     /* Getters y Setters*/
     public String getImagen() { return imagen; }
 
-    public void setImagen(String imagen) { this.imagen = imagen; }
-
     public String getTitulo() { return titulo; }
 
     public void setTitulo(String titulo) { this.titulo = titulo; }
 
     public Long getFecha() { return fecha; }
 
-    public void setFecha(Long fecha) { this.fecha = fecha; }
-
     public String getUri() { return uri; }
-
-    public void setUri(String uri) { this.uri = uri; }
 
     public String getAutor() { return autor; }
 
-    public void setAutor(String autor) { this.autor = autor; }
-
     public String getNombrecarpeta() { return nombrecarpeta; }
-
-    public void setNombrecarpeta(String nombrecarpeta) { this.nombrecarpeta = nombrecarpeta;}
 }

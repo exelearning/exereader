@@ -16,12 +16,15 @@ import android.view.ViewGroup;
 import com.example.exereader.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.Locale;
+
 import static androidx.core.content.PermissionChecker.checkSelfPermission;
 
 /** Clase ListaVacia - Se ejecutara en caso de que la aplicación no tenga contenido*/
 public class FragmentListaVacia extends Fragment {
     private FloatingActionButton floatingActionButton;
     private static final int REQUEST_PERMISSION_CODE = 5656;
+    String idioma =  Locale.getDefault().getLanguage(); // es
 
     /* Constructor*/
     public FragmentListaVacia() {
@@ -66,8 +69,13 @@ public class FragmentListaVacia extends Fragment {
                 fragmentTransaction.commit();
             } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage("Para poder descomprimir un archivo debe aceptar los permisos.").setTitle("Error")
-                        .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                if(!idioma.equalsIgnoreCase("es")){
+                    builder.setMessage("In order to unzip a file you must accept the permissions.").setTitle("Error")
+                            .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                }else {
+                    builder.setMessage("Para poder descomprimir un archivo debe aceptar los permisos.").setTitle("Error")
+                            .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                }
                 builder.show();
             }
         }

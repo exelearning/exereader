@@ -11,10 +11,4 @@
     <color name="verdeOscuro">#484c2c</color>
     <color name="verdeClarito">#c4d496</color>
     <color name="grisVerdoso">#7c796b</color>
-    <color name="naranjaLogo">#f78e2c</color>
-    <color name="naranjaClaroLogo">#fbe3b3</color>
-    <color name="azulLogo">#0daccc</color>
-    <color name="azulClaroLogo">#d0eeed</color>
-    <color name="azulAguaLogo">#7ca1a5</color>
-    <color name="rojoLogo">#b33350</color>
 </resources>

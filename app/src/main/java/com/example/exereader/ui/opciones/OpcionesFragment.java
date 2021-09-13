@@ -22,6 +22,7 @@ import com.example.exereader.ClaseSharedPreferences;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.File;
+import java.util.Locale;
 
 /** OPCIONES */
 public class OpcionesFragment extends Fragment implements View.OnClickListener {
@@ -54,6 +55,7 @@ public class OpcionesFragment extends Fragment implements View.OnClickListener {
     /** Controlamos en que botón pulsa el usuario para realizar una opción u otra */
     @Override
     public void onClick(View v) {
+        String idioma =  Locale.getDefault().getLanguage(); // es
         Uri uri = FileProvider.getUriForFile(getContext(), "com.example.exereader.fileprovider", new File(ClaseSharedPreferences.verDatos(getContext(), "archivo")+".zip"));
         switch (v.getId()){
             case R.id.wha:
@@ -68,8 +70,13 @@ public class OpcionesFragment extends Fragment implements View.OnClickListener {
                     getActivity().startActivity(compartir);
                 }catch (ActivityNotFoundException e){
                     e.printStackTrace();
-                    Snackbar.make(getView(), "Error - Aplicación no instalada.", Snackbar.LENGTH_SHORT)
-                            .show();
+                    if(!idioma.equalsIgnoreCase("es")){
+                        Snackbar.make(getView(), "Error - Application not installed.", Snackbar.LENGTH_SHORT)
+                                .show();
+                    }else{
+                        Snackbar.make(getView(), "Error - Aplicación no instalada.", Snackbar.LENGTH_SHORT)
+                                .show();
+                    }
                 }
                 break;
             case R.id.te:
@@ -83,30 +90,53 @@ public class OpcionesFragment extends Fragment implements View.OnClickListener {
                     getActivity().startActivity(compartirTe);
                 }catch (ActivityNotFoundException e){
                     e.printStackTrace();
-                    Snackbar.make(getView(), "Error - Aplicación no instalada.", Snackbar.LENGTH_SHORT)
-                            .show();
+                    if(!idioma.equalsIgnoreCase("es")){
+                        Snackbar.make(getView(), "Error - Application not installed.", Snackbar.LENGTH_SHORT)
+                                .show();
+                    }else{
+                        Snackbar.make(getView(), "Error - Aplicación no instalada.", Snackbar.LENGTH_SHORT)
+                                .show();
+                    }
                 }
                 break;
             case R.id.face:
                 Intent intent = new Intent(android.content.Intent.ACTION_SEND);
                 intent.setType("application/zip");
-                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Proyecto enviado desde eXeReader");//se usará por ejemplo para email
-                intent.putExtra(Intent.EXTRA_STREAM, uri);
-                getActivity().startActivity(Intent.createChooser(intent, "Compartir usando..."));
+                if(!idioma.equalsIgnoreCase("es")){
+                    intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Project sent from eXeReader");
+                    intent.putExtra(Intent.EXTRA_STREAM, uri);
+                    getActivity().startActivity(Intent.createChooser(intent, "Share using..."));
+                }else{
+                    intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Proyecto enviado desde eXeReader");//se usará por ejemplo para email
+                    intent.putExtra(Intent.EXTRA_STREAM, uri);
+                    getActivity().startActivity(Intent.createChooser(intent, "Compartir usando..."));
+                }
+
                 break;
             case R.id.borrarApp:
                 File f= new File(ClaseSharedPreferences.verDatos(getContext(), "directorio"));
                 //Pedir confirmación antes de eliminar un proyecto.
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle("Confirmación");
-                builder.setMessage("Eliminar el contenido de la aplicación. ¿Continuar?");
-                //Si el usuario pulsa en si, procedemos a borrar el contenido.
-                builder.setPositiveButton("Sí", (dialog, which) -> {
-                    borrarApp(f);
-                    ClaseSharedPreferences.eliminarDatos(getContext(), "cambio");
-                    ClaseSharedPreferences.guardarDatos(getContext(),"cambio","no");
-                    ((MainActivity) getActivity()).activarMenu();
-                });
+                if(!idioma.equalsIgnoreCase("es")){
+                    builder.setTitle("Confirmation");
+                    builder.setMessage("Delete the contents of the application. Continue?");
+                    builder.setPositiveButton("Yes", (dialog, which) -> {
+                        borrarApp(f);
+                        ClaseSharedPreferences.eliminarDatos(getContext(), "cambio");
+                        ClaseSharedPreferences.guardarDatos(getContext(),"cambio","no");
+                        ((MainActivity) getActivity()).activarMenu();
+                    });
+                }else{
+                    builder.setTitle("Confirmación");
+                    builder.setMessage("Eliminar el contenido de la aplicación. ¿Continuar?");
+                    //Si el usuario pulsa en si, procedemos a borrar el contenido.
+                    builder.setPositiveButton("Sí", (dialog, which) -> {
+                        borrarApp(f);
+                        ClaseSharedPreferences.eliminarDatos(getContext(), "cambio");
+                        ClaseSharedPreferences.guardarDatos(getContext(),"cambio","no");
+                        ((MainActivity) getActivity()).activarMenu();
+                    });
+                }
                 builder.setNegativeButton("No", (dialog, which) -> {
                 });
                 builder.show();
@@ -116,6 +146,7 @@ public class OpcionesFragment extends Fragment implements View.OnClickListener {
 
     /** Métodos usados para borrar el proyecto de la aplicación */
     private void borrarApp(File f) {
+        String idioma =  Locale.getDefault().getLanguage(); // es
         String path = getContext().getExternalFilesDir(null).toString();
         File carpetaFicheros = new File(path);
         File[] files = carpetaFicheros.listFiles();
@@ -128,8 +159,13 @@ public class OpcionesFragment extends Fragment implements View.OnClickListener {
             }
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("Archivo eliminado correctamente.").setTitle("Eliminado")
-                .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+        if(!idioma.equalsIgnoreCase("es")){
+            builder.setMessage("File successfully deleted.").setTitle("Deleted")
+                    .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+        }else {
+            builder.setMessage("Archivo eliminado correctamente.").setTitle("Eliminado")
+                    .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+        }
         builder.show();
     }
 

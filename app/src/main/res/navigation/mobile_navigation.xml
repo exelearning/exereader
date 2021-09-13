@@ -30,12 +30,12 @@
     <fragment
         android:id="@+id/nav_creditos"
         android:name="com.example.exereader.ui.creditos.CreditosFragment"
-        android:label="Créditos"
+        android:label="@string/menu_creditos"
         tools:layout="@layout/fragment_creditos" />
     <fragment
         android:id="@+id/nav_sugerencias"
         android:name="com.example.exereader.ui.sugerencias.SugerenciasFragment"
-        android:label="Sugerencias"
+        android:label="@string/nav_sugerencias"
         tools:layout="@layout/fragment_sugerencias" />
     <fragment
         android:id="@+id/fileChooser"

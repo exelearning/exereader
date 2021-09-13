@@ -6,17 +6,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.exereader.R;
 import com.example.exereader.ClaseSharedPreferences;
+import com.example.exereader.R;
 import com.example.exereader.ui.home.HomeFragment;
 
 import org.w3c.dom.Document;
@@ -28,6 +28,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,6 +44,7 @@ public class DetallesFragment extends Fragment {
     String titulo="",author="",descripcion="",idioma="",licencia="";
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_detalles, container, false);
@@ -53,6 +55,7 @@ public class DetallesFragment extends Fragment {
         idi = root.findViewById(R.id.i);
         l = root.findViewById(R.id.l);
 
+        String idioma =  Locale.getDefault().getLanguage(); // es
         String dire = ClaseSharedPreferences.verDatos(getContext(), "archivo");
         File directorio = new File(dire);
 
@@ -71,8 +74,14 @@ public class DetallesFragment extends Fragment {
                         }
                     }else{
                         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                        builder.setMessage("No se ha encontrado el archivo index.html.").setTitle("Error")
-                                .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+
+                        if(!idioma.equalsIgnoreCase("es")){
+                            builder.setMessage("The index.html file was not found.").setTitle("Error")
+                                    .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                        }else {
+                            builder.setMessage("No se ha encontrado el archivo index.html.").setTitle("Error")
+                                    .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                        }
                         builder.show();
                         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -87,8 +96,13 @@ public class DetallesFragment extends Fragment {
                         leerArchivo(xmlDatos);
                     }else{
                         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                        builder.setMessage("No se ha encontrado un archivo de configuración del cual obtener información.").setTitle("Error")
-                                .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                        if(!idioma.equalsIgnoreCase("es")){
+                            builder.setMessage("Could not find a configuration file to get information from.").setTitle("Error")
+                                    .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                        }else{
+                            builder.setMessage("No se ha encontrado un archivo de configuración del cual obtener información.").setTitle("Error")
+                                    .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                        }
                         builder.show();
                         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

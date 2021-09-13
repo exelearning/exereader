@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="308dp"
-        android:layout_height="256dp"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
         android:adjustViewBounds="false"
         android:scaleType="centerCrop"
         android:src="@drawable/exereader"
@@ -19,14 +19,13 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307"
-        android:contentDescription="TODO" />
+        app:layout_constraintVertical_bias="0.307" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/cont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No hay contenidos"
+        android:text="@string/cont"
         android:textAlignment="center"
         android:textColor="@color/grisVerdoso"
         android:textColorHighlight="@color/grisVerdoso"

@@ -2,7 +2,6 @@ package com.example.exereader.ui.home;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.pm.ConfigurationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -32,6 +31,7 @@ import org.w3c.dom.NodeList;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -70,11 +70,7 @@ public class HomeFragment extends Fragment{
         ClaseSharedPreferences.eliminarDatos(getContext(),"Uri");
         ClaseSharedPreferences.eliminarDatos(getContext(),"tp");
 
-
         String uri = ClaseSharedPreferences.verDatos(getContext(), "uriDefault");
-
-
-
 
         //Bloqueamos las opciones de sobreProyecto
         setHasOptionsMenu(true);
@@ -119,6 +115,7 @@ public class HomeFragment extends Fragment{
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        String idioma =  Locale.getDefault().getLanguage(); // es
 
         if (requestCode == REQUEST_PERMISSION_CODE) {//Este caso se ejecutaría si el usuario cancela los permisos
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -130,8 +127,13 @@ public class HomeFragment extends Fragment{
                 fragmentTransaction.commit();
             } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage("Para poder descomprimir un archivo debe aceptar los permisos.").setTitle("Error")
-                        .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                if(!idioma.equalsIgnoreCase("es")) {
+                    builder.setMessage("In order to unzip a file you must accept the permissions").setTitle("Error")
+                            .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                }else{
+                    builder.setMessage("Para poder descomprimir un archivo debe aceptar los permisos.").setTitle("Error")
+                            .setPositiveButton("Ok", (dialogInterface, which) -> dialogInterface.cancel());
+                }
                 builder.show();
             }
         }
