@@ -2,7 +2,7 @@
 
 eXeReader is a GPL2+ free/libre Android app to read eXeLearning contents.
 
-It reads HTML websites created with eXeLearning.
+It reads HTML websites created with eXeLearning: https://exelearning.net/
 
 ## About
 
@@ -40,4 +40,22 @@ https://github.com/exelearning/exereader
 
 ## Credits
 
-Please see the Copyright file.
+The eXeLearning original logo is part of the eXe project, under the 
+terms of the GNU General Public License version 2.0 (GPLv2). 
+Copyright: 2004-2005, University of Auckland.
+See https://exelearning.org/ for details.
+
+eXeLearning logo version used in eXeReader: Francisco Javier Pulido Cuadrado.
+
+WhatsApp icon: Flaticon (https://www.flaticon.es/). 
+See the License Agreement for Flaticon Content in https://www.freepikcompany.com/legal
+
+Other icons: Material icons, by Google, Licensed under the Apache License, Version 2.0 (the "License");
+you may not use those files except in compliance with the License.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the Apache License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
