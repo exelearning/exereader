@@ -40,6 +40,8 @@ https://github.com/exelearning/exereader
 
 ## Credits
 
+eXeReader uses the eXeLearning logo.
+
 The eXeLearning original logo is part of the eXe project, under the 
 terms of the GNU General Public License version 2.0 (GPLv2). 
 Copyright: 2004-2005, University of Auckland.
