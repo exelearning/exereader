@@ -4,6 +4,8 @@ eXeReader is a GPL2+ free/libre Android app to read eXeLearning contents.
 
 It reads HTML websites created with eXeLearning: https://exelearning.net/
 
+eXeReader is compatible with Android 6 onwards.
+
 ## About
 
 Copyright 2021: Elena Isabel Nofuentes Méndez (original developer) and project contributors.  
