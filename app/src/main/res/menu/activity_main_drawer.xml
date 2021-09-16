@@ -4,20 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
     <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/icon_home"
-            android:title="@string/menu_home" />
+        android:id="@+id/nav_home"
+        android:checkable="false"
+        android:icon="@drawable/icon_home"
+        android:title="@string/menu_home" />
 
     <item android:title="@string/contenido">
         <menu>
             <group>
                 <item
                     android:id="@+id/nav_gallery"
+                    android:checkable="false"
                     android:enabled="false"
                     android:icon="@drawable/icon_info"
                     android:title="@string/menu_gallery" />
                 <item
                     android:id="@+id/nav_slideshow"
+                    android:checkable="false"
                     android:enabled="false"
                     android:icon="@drawable/icon_options"
                     android:title="@string/menu_slideshow" />
@@ -29,14 +32,17 @@
             <group>
                 <item
                     android:id="@+id/nav_ayuda"
+                    android:checkable="false"
                     android:icon="@drawable/icon_help"
                     android:title="@string/menu_ayuda" />
                 <item
                     android:id="@+id/nav_creditos"
+                    android:checkable="false"
                     android:icon="@drawable/icon_credits"
                     android:title="@string/menu_creditos" />
                 <item
                     android:id="@+id/nav_sugerencias"
+                    android:checkable="false"
                     android:icon="@drawable/icon_suggest"
                     android:title="@string/nav_sugerencias" />
             </group>

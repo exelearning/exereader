@@ -5,15 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ic_launcher_background"
-    android:orientation="vertical"
-    tools:context=".ui.ayuda.AyudaFragment">
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="23dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
@@ -24,7 +30,7 @@
             android:layout_margin="5dp"
             android:text="@string/titulo"
             android:textColor="#000000"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -39,8 +45,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="23dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
@@ -51,7 +57,7 @@
             android:layout_margin="5dp"
             android:text="@string/autor"
             android:textColor="#000000"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -66,8 +72,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="23dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
@@ -78,7 +84,7 @@
             android:layout_margin="5dp"
             android:text="@string/descripcion"
             android:textColor="#000000"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -94,8 +100,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="23dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
@@ -106,7 +112,7 @@
             android:layout_margin="5dp"
             android:text="@string/idioma"
             android:textColor="#000000"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -122,8 +128,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="23dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
@@ -134,7 +140,7 @@
             android:layout_margin="5dp"
             android:text="@string/licencia"
             android:textColor="#000000"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -145,5 +151,6 @@
             android:textColor="#000000"
             android:textSize="12sp" />
     </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

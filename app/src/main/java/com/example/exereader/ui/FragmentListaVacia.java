@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.exereader.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,7 +23,7 @@ import static androidx.core.content.PermissionChecker.checkSelfPermission;
 
 /** Clase ListaVacia - Se ejecutara en caso de que la aplicación no tenga contenido*/
 public class FragmentListaVacia extends Fragment {
-    private FloatingActionButton floatingActionButton;
+    private Button FloatingActionButton ;
     private static final int REQUEST_PERMISSION_CODE = 5656;
     String idioma =  Locale.getDefault().getLanguage(); // es
 
@@ -46,8 +47,8 @@ public class FragmentListaVacia extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lista_vacia, container, false);
-        floatingActionButton = view.findViewById(R.id.btnProyecto);
-        floatingActionButton.setOnClickListener(v -> verificarPermisos());
+        FloatingActionButton = view.findViewById(R.id.btnProyecto);
+        FloatingActionButton.setOnClickListener(v -> verificarPermisos());
         /*Si no tenemos contenido, la lista está vacía, los item del menú deben estar bloqueados*/
         setHasOptionsMenu(true);
 

@@ -16,7 +16,7 @@ import java.util.Locale;
  * */
 public class SugerenciasFragment extends Fragment {
     private WebView web;
-
+    private String idioma;
     public SugerenciasFragment() { }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,9 @@ public class SugerenciasFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sugerencias, container, false);
         web = view.findViewById(R.id.webV);
-        String idioma =  Locale.getDefault().getLanguage(); // es
         web.setWebViewClient(new WebViewClient());
+
+        idioma =  Locale.getDefault().getLanguage(); // es
         if(!idioma.equalsIgnoreCase("es")){
             web.loadUrl("file:///android_asset/sugerencias_en.html");
         }else{

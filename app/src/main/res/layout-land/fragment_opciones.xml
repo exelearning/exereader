@@ -7,46 +7,54 @@
     android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".ui.opciones.OpcionesFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="33dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/opciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:text="@string/contenido"
             android:textAlignment="viewStart"
             android:textColor="#000000"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="20dp"
             android:textColor="#000000"
             android:textStyle="normal" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/compartir"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/compartir"
-        android:textColor="#000000"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/compartir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="27dp"
+                android:text="@string/compartir"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,10 +68,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:backgroundTint="@color/verde"
+            android:backgroundTint="?attr/colorPrimary"
             app:icon="@drawable/icon_whatsapp"
             app:iconGravity="textEnd"
-            app:iconPadding="0dp" />
+            app:iconPadding="0dp"
+            app:iconTint="#FFFFFF" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/te"
@@ -71,10 +80,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:backgroundTint="@color/verde"
+            android:backgroundTint="?attr/colorPrimary"
             app:icon="@drawable/icon_send"
             app:iconGravity="textEnd"
-            app:iconPadding="0dp" />
+            app:iconPadding="0dp"
+            app:iconTint="#FFFFFF" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/face"
@@ -83,44 +93,49 @@
             android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:backgroundTint="@color/verde"
+            android:backgroundTint="?attr/colorPrimary"
             app:icon="@drawable/icon_share"
             app:iconGravity="textEnd"
-            app:iconPadding="0dp" />
+            app:iconPadding="0dp"
+            app:iconTint="#FFFFFF" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/borrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="3dp"
-        android:text="@string/borrar"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/borrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/borrar"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="12dp"
-        android:gravity="center|top">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center|top">
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/borrarApp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:backgroundTint="@color/verde"
-            app:icon="@drawable/icon_delete"
-            app:iconGravity="textEnd"
-            app:iconPadding="0dp" />
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/borrarApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:backgroundTint="?attr/colorPrimary"
+                    app:icon="@drawable/icon_delete"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="0dp"
+                    app:iconTint="#FFFFFF" />
 
-    </LinearLayout>
-
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

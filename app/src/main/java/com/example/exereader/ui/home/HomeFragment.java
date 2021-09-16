@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +23,6 @@ import com.example.exereader.ui.FileChooser;
 import com.example.exereader.ui.FragmentListaVacia;
 import com.example.exereader.Proyectos;
 import com.example.exereader.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment{
     private RecyclerView proyectos;
     private Adaptador adaptador;
     private ArrayList<Proyectos> lista;
-    private FloatingActionButton floatingActionButton;
+    private Button buttonHome;
     String titulo="", autor="";
     private static final int REQUEST_PERMISSION_CODE = 5656;
 
@@ -74,7 +74,7 @@ public class HomeFragment extends Fragment{
 
         //Bloqueamos las opciones de sobreProyecto
         setHasOptionsMenu(true);
-        floatingActionButton = root.findViewById(R.id.btnProyectoPrin);
+        buttonHome = root.findViewById(R.id.floatingActionButton);
         proyectos = root.findViewById(R.id.proyectos);
         proyectos.setLayoutManager(new LinearLayoutManager(getContext()));
         lista = new ArrayList<>();
@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment{
             proyectos.setAdapter(adaptador);
         }
 
-        floatingActionButton.setOnClickListener(v -> verificarPermisos());
+        buttonHome.setOnClickListener(v -> verificarPermisos());
 
         if(!uri.equalsIgnoreCase(" ")){
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -105,7 +105,6 @@ public class HomeFragment extends Fragment{
             fragmentTransaction.replace(R.id.nav_host_fragment, fragmentListaVacia);
             fragmentTransaction.commit();
         }
-
         return root;
     }
 
@@ -191,12 +190,31 @@ public class HomeFragment extends Fragment{
     private String buscarImagen(File file) {
         File[] archivos = file.listFiles();
         String ruta = null;
-        int i = 0;
-        while(ruta == null && i < archivos.length){
-            if(archivos[i].getName().contains(".png") || archivos[i].getName().contains(".jpg")){
-                ruta = archivos[i].getAbsolutePath();
+        int i = 0,x=0;
+        boolean portada = false;
+
+        while(ruta == null && x < archivos.length){
+            if(archivos[x].getName().contains(".png") || archivos[x].getName().contains(".jpg")){
+                if(!archivos[x].getAbsolutePath().contains("icon_") && !archivos[x].getAbsolutePath().contains("popup_bg")
+                        && !archivos[x].getAbsolutePath().contains("licenses") && archivos[x].getAbsolutePath().contains("portada")){
+                    ruta = archivos[x].getAbsolutePath();
+                    portada=true;
+                }
             }
-            i++;
+            x++;
+        }
+
+
+        if(portada==false) {
+            while (ruta == null && i < archivos.length) {
+                if (archivos[i].getName().contains(".png") || archivos[i].getName().contains(".jpg")) {
+                    if (!archivos[i].getAbsolutePath().contains("icon_") && !archivos[i].getAbsolutePath().contains("popup_bg")
+                            && !archivos[i].getAbsolutePath().contains("licenses") && !archivos[i].getAbsolutePath().contains("88x31")) {
+                        ruta = archivos[i].getAbsolutePath();
+                    }
+                }
+                i++;
+            }
         }
         return ruta;
     }
