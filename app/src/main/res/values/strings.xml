@@ -41,13 +41,5 @@
     <string name="contenido">Title:</string>
     <string name="menu_creditos">Credits</string>
     <string name="nav_sugerencias">Suggestions</string>
-    <string name="p">Score</string>	
-    <string name="comentario">Comment</string>	
     <string name="cont">No contents</string>
-    <string name="llama">"Call "</string>
-    <string name="titu">- Selected project data -</string>
-    <string name="ver">Version </string>
-    <string name="editable">Editable</string>
-    <string name="borrarDatos">Delete data</string>
-    <string name="logo">logo</string>	
 </resources>
