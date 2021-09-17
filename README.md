@@ -6,6 +6,15 @@ It reads HTML websites created with eXeLearning: https://exelearning.net/
 
 eXeReader is compatible with Android 6 onwards.
 
+## Getting started
+
+- Download the the APK from [this page](https://github.com/exelearning/exereader/releases/latest "Latest release") and install it like any other app.
+- Download an eXeLearning content (created using eXeLearning's Export - Web Site - Zip File option) to your mobile or tablet.
+- Open eXeReader and click on the + icon at the bottom of the screen.
+- Select the zip file.
+
+---
+
 ## About
 
 Copyright 2021: Elena Isabel Nofuentes Méndez (original developer) and project contributors.  
