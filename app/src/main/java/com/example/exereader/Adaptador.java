@@ -1,7 +1,12 @@
 package com.example.exereader;
 
+import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +14,9 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -32,6 +39,10 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RecyclerHolder> {
     private CardView card;
     private final AppCompatActivity actividad;
 
+    /* *********** educamadrid ********** */
+    private boolean esModoNoche;
+    /* *********** educamadrid ********** */
+
     /* Constructor parametrizado */
     public Adaptador(ArrayList<Proyectos> lista, AppCompatActivity actividad) {
         this.lista = lista;
@@ -47,6 +58,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RecyclerHolder> {
         webview = view2.findViewById(R.id.wView);
         card = view.findViewById(R.id.cardSeccion);
 
+        esModoNoche = comprobarModoNoche(parent.getContext());
+
         return new RecyclerHolder(view);
     }
 
@@ -54,6 +67,25 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RecyclerHolder> {
     public void cambiarOrden(){
         Collections.sort(lista, (p1,p2) -> p2.getFecha().compareTo(p1.getFecha()));
     }
+
+    /* *********** educamadrid ********** */
+    /** Método para comprobar qué modo está activado en el dispositivo **/
+    public boolean comprobarModoNoche(Context context) {
+       boolean esModoNoche = false;
+
+       Configuration configuration = context.getResources().getConfiguration();
+
+        int currentNightMode = configuration.uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (currentNightMode) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                //modo oscuro
+                esModoNoche = true;
+                break;
+        }
+
+       return esModoNoche;
+    }
+    /* *********** educamadrid ********** */
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerHolder holder, int position) {
@@ -63,6 +95,14 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RecyclerHolder> {
         if(position % 2 != 0){
             card.setCardBackgroundColor(Color.parseColor("#E6E6E6"));
         }
+        /* *********** educamadrid ********** */
+        if (esModoNoche) {
+            if(position % 2 == 0){
+                card.setCardBackgroundColor(Color.WHITE);
+            }
+        }
+        /* *********** educamadrid ********** */
+
         //Ponemos los datos en la lista
         holder.titulo.setText(proyectos.getTitulo());
         holder.autor.setText(proyectos.getAutor());
@@ -144,4 +184,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RecyclerHolder> {
             int posicion = getAdapterPosition();
         }
     }
+
+
 }

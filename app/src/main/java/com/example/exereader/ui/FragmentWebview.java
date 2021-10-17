@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,11 +67,18 @@ public class FragmentWebview extends Fragment {
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                HomeFragment homeFragment = HomeFragment.newInstance("", "");
-                fragmentTransaction.replace(R.id.nav_host_fragment, homeFragment);
-                fragmentTransaction.commit();
+
+                /* ******* educamadrid ********/
+                if (webview.canGoBack()) {
+                    webview.goBack();
+                /* ******* educamadrid ********/
+                } else {
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    HomeFragment homeFragment = HomeFragment.newInstance("", "");
+                    fragmentTransaction.replace(R.id.nav_host_fragment, homeFragment);
+                    fragmentTransaction.commit();
+                }
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);

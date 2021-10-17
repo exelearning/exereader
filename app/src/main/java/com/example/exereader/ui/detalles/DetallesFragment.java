@@ -2,7 +2,9 @@ package com.example.exereader.ui.detalles;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,7 +138,9 @@ public class DetallesFragment extends Fragment {
         if(!licencia.equals("")){
             l.setText(licencia);
         }else{
-            l.setText(" ");
+            // poner nuevo string
+            l.setTextColor(Color.RED);
+            l.setText(R.string.cont);
         }
     }
 
@@ -167,6 +171,10 @@ public class DetallesFragment extends Fragment {
                                 Node nodoSiguiente = nListString.item(i+2);
                                 Element eElementSiguiente = (Element) nodoSiguiente;
                                 titulo = eElementSiguiente.getAttribute("value");
+                                if (titulo.equals("")) {
+                                    titulo = getString(R.string.cont);
+                                    t.setTextColor(Color.RED);
+                                }
                                 t.setText(titulo);
                             }
 
@@ -174,6 +182,10 @@ public class DetallesFragment extends Fragment {
                                 Node nodoSiguiente = nListString.item(i+2);
                                 Element eElementSiguiente = (Element) nodoSiguiente;
                                 author = eElementSiguiente.getAttribute("value");
+                                if (author.equals("")) {
+                                    author = getString(R.string.cont);
+                                    a.setTextColor(Color.RED);
+                                }
                                 a.setText(author);
                             }
 
@@ -181,6 +193,11 @@ public class DetallesFragment extends Fragment {
                                 Node nodoSiguiente = nListString.item(i+2);
                                 Element eElementSiguiente = (Element) nodoSiguiente;
                                 descripcion = eElementSiguiente.getAttribute("value");
+                                if (descripcion.equals("")) {
+                                    // poner nuevo string
+                                    descripcion = getString(R.string.cont);
+                                    d.setTextColor(Color.RED);
+                                }
                                 d.setText(descripcion);
                             }
 
@@ -188,6 +205,11 @@ public class DetallesFragment extends Fragment {
                                 Node nodoSiguiente = nListString.item(i+2);
                                 Element eElementSiguiente = (Element) nodoSiguiente;
                                 idioma = eElementSiguiente.getAttribute("value");
+                                if (idioma.equals("")) {
+                                    // poner nuevo string
+                                    idioma = getString(R.string.cont);
+                                    idi.setTextColor(Color.RED);
+                                }
                                 idi.setText(idioma);
                             }
                         }
