@@ -42,4 +42,5 @@
     <string name="menu_creditos">Créditos</string>
     <string name="nav_sugerencias">Sugerencias</string>
     <string name="cont">No hay contenidos</string>
+    <string name="no_info">Sin información</string>
 </resources>

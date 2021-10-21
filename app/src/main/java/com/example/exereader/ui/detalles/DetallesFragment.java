@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -139,8 +140,8 @@ public class DetallesFragment extends Fragment {
             l.setText(licencia);
         }else{
             // poner nuevo string
-            l.setTextColor(Color.RED);
-            l.setText(R.string.cont);
+            l.setTextColor(ContextCompat.getColor(this.getContext(), R.color.grisOscuro));
+            l.setText(R.string.no_info);
         }
     }
 
@@ -172,8 +173,8 @@ public class DetallesFragment extends Fragment {
                                 Element eElementSiguiente = (Element) nodoSiguiente;
                                 titulo = eElementSiguiente.getAttribute("value");
                                 if (titulo.equals("")) {
-                                    titulo = getString(R.string.cont);
-                                    t.setTextColor(Color.RED);
+                                    titulo = getString(R.string.no_info);
+                                    t.setTextColor(ContextCompat.getColor(this.getContext(), R.color.grisOscuro));
                                 }
                                 t.setText(titulo);
                             }
@@ -183,8 +184,8 @@ public class DetallesFragment extends Fragment {
                                 Element eElementSiguiente = (Element) nodoSiguiente;
                                 author = eElementSiguiente.getAttribute("value");
                                 if (author.equals("")) {
-                                    author = getString(R.string.cont);
-                                    a.setTextColor(Color.RED);
+                                    author = getString(R.string.no_info);
+                                    a.setTextColor(ContextCompat.getColor(this.getContext(), R.color.grisOscuro));
                                 }
                                 a.setText(author);
                             }
@@ -195,8 +196,8 @@ public class DetallesFragment extends Fragment {
                                 descripcion = eElementSiguiente.getAttribute("value");
                                 if (descripcion.equals("")) {
                                     // poner nuevo string
-                                    descripcion = getString(R.string.cont);
-                                    d.setTextColor(Color.RED);
+                                    descripcion = getString(R.string.no_info);
+                                    d.setTextColor(ContextCompat.getColor(this.getContext(), R.color.grisOscuro));
                                 }
                                 d.setText(descripcion);
                             }
@@ -207,8 +208,8 @@ public class DetallesFragment extends Fragment {
                                 idioma = eElementSiguiente.getAttribute("value");
                                 if (idioma.equals("")) {
                                     // poner nuevo string
-                                    idioma = getString(R.string.cont);
-                                    idi.setTextColor(Color.RED);
+                                    idioma = getString(R.string.no_info);
+                                    idi.setTextColor(ContextCompat.getColor(this.getContext(), R.color.grisOscuro));
                                 }
                                 idi.setText(idioma);
                             }
