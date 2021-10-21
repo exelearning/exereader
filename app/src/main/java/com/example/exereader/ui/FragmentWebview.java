@@ -1,27 +1,28 @@
 package com.example.exereader.ui;
 
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
+import com.example.exereader.BuildConfig;
 import com.example.exereader.R;
 import com.example.exereader.ui.home.HomeFragment;
-import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
 
@@ -58,20 +59,75 @@ public class FragmentWebview extends Fragment {
             webview.getSettings().setDefaultTextEncodingName("utf-8");
             webview.getSettings().setAllowContentAccess(true);
             webview.getSettings().setAllowFileAccess(true);
+            webview.getSettings().setSupportMultipleWindows(true);
             webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-            webview.setWebViewClient(new WebViewClient());
+            webview.setWebViewClient(new WebViewClient() {
+                @SuppressWarnings("deprecation")
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    if (url.startsWith("file")) {
+                        WebView.HitTestResult result = view.getHitTestResult();
+                        String data = result.getExtra();
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
+                        browserIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        view.getContext().startActivity(browserIntent);
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
 
+                @RequiresApi(Build.VERSION_CODES.N)
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    String url = request.getUrl().toString();
+                    Uri u = request.getUrl();
+
+                    if (url.startsWith("file")) {
+                        Intent i = new Intent(Intent.ACTION_VIEW, FileProvider.getUriForFile(view.getContext(),
+                                BuildConfig.APPLICATION_ID + ".provider", new File(u.getPath())));
+
+                        i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        startActivity(i);
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+
+            webview.setWebChromeClient(new WebChromeClient() {
+                @Override
+                public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg)
+                {
+                    WebView.HitTestResult result = view.getHitTestResult();
+                    String data = result.getExtra();
+
+                    if (data.startsWith("file")) {
+                        Uri uri = Uri.parse(data);
+                        Intent i = new Intent(Intent.ACTION_VIEW, FileProvider.getUriForFile(view.getContext(),
+                                BuildConfig.APPLICATION_ID + ".provider", new File(uri.getPath())));
+
+                        i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        startActivity(i);
+                        return true;
+                    } else {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
+                        view.getContext().startActivity(browserIntent);
+                        return false;
+                    }
+                }
+            });
             webview.loadUrl(paginaWeb.getAbsolutePath());
         }
 
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-
                 /* ******* educamadrid ********/
                 if (webview.canGoBack()) {
                     webview.goBack();
-                /* ******* educamadrid ********/
+                    /* ******* educamadrid ********/
                 } else {
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
