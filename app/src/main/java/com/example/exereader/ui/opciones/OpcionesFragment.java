@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.example.exereader.BuildConfig;
 import com.example.exereader.MainActivity;
 import com.example.exereader.R;
 import com.example.exereader.ClaseSharedPreferences;
