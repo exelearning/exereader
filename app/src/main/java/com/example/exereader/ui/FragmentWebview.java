@@ -61,20 +61,23 @@ public class FragmentWebview extends Fragment {
             webview.getSettings().setAllowFileAccess(true);
             webview.getSettings().setSupportMultipleWindows(true);
             webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-            webview.setWebViewClient(new WebViewClient() {
+            webview.setWebViewClient(new WebViewClient(){
+                /******************** EducaMadrid *******************/
                 @SuppressWarnings("deprecation")
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                    if (url.startsWith("file")) {
-                        WebView.HitTestResult result = view.getHitTestResult();
-                        String data = result.getExtra();
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
-                        browserIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                        view.getContext().startActivity(browserIntent);
-                        return true;
-                    } else {
-                        return false;
+                    String[] parts = url.split("\\?");
+                    if (!parts[0].contains("#")) {
+                        if(!parts[0].startsWith("https") && !parts[0].startsWith("http") && !parts[0].endsWith(".html") && !parts[0].endsWith(".htm")) {
+                            WebView.HitTestResult result = view.getHitTestResult();
+                            String data = result.getExtra();
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
+                            browserIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                            view.getContext().startActivity(browserIntent);
+                        }
                     }
+
+                    return false;
                 }
 
                 @RequiresApi(Build.VERSION_CODES.N)
@@ -83,16 +86,18 @@ public class FragmentWebview extends Fragment {
                     String url = request.getUrl().toString();
                     Uri u = request.getUrl();
 
-                    if (url.startsWith("file")) {
-                        Intent i = new Intent(Intent.ACTION_VIEW, FileProvider.getUriForFile(view.getContext(),
-                                BuildConfig.APPLICATION_ID + ".provider", new File(u.getPath())));
+                    String[] parts = url.split("\\?");
 
-                        i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                        startActivity(i);
-                        return true;
-                    } else {
-                        return false;
+                    if (!parts[0].contains("#")) {
+                        if(!parts[0].startsWith("https") && !parts[0].startsWith("http") &&!parts[0].endsWith(".html") && !parts[0].endsWith(".htm")) {
+                            Intent i = new Intent(Intent.ACTION_VIEW, FileProvider.getUriForFile(view.getContext(),
+                                    "com.example.exereader.fileprovider", new File(u.getPath())));
+
+                            i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                            startActivity(i);
+                        }
                     }
+                    return false;
                 }
             });
 
@@ -102,25 +107,23 @@ public class FragmentWebview extends Fragment {
                 {
                     WebView.HitTestResult result = view.getHitTestResult();
                     String data = result.getExtra();
-
+                    Uri uri = Uri.parse(data);
                     if (data.startsWith("file")) {
-                        Uri uri = Uri.parse(data);
                         Intent i = new Intent(Intent.ACTION_VIEW, FileProvider.getUriForFile(view.getContext(),
-                                BuildConfig.APPLICATION_ID + ".provider", new File(uri.getPath())));
+                                "com.example.exereader.fileprovider", new File(uri.getPath())));
 
                         i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                         startActivity(i);
-                        return true;
                     } else {
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
                         view.getContext().startActivity(browserIntent);
-                        return false;
                     }
+                    return false;
                 }
             });
+            /******************** EducaMadrid *******************/
             webview.loadUrl(paginaWeb.getAbsolutePath());
         }
-
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
