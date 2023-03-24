@@ -47,7 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "drawerSuggestions":
             MessageLookupByLibrary.simpleMessage("Suggestions"),
         "errorDownloadResource": MessageLookupByLibrary.simpleMessage(
-            "An error occurred while downloading the resource"),
+            "Could not download the resource. Access might be restricted."),
         "errorImportProject":
             MessageLookupByLibrary.simpleMessage("Failed to import resource"),
         "floatingImport": m3,
@@ -108,11 +108,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "resourceNoFound": MessageLookupByLibrary.simpleMessage(
             "No projects have been found with the search criteria applied"),
         "resourceNotValid":
-            MessageLookupByLibrary.simpleMessage("Invalid resource"),
+            MessageLookupByLibrary.simpleMessage("Invalid resource. Maybe the zip file was not created with eXeLearning."),
         "resourceNotValidZipExtension": MessageLookupByLibrary.simpleMessage(
             "The resource is not valid. It must be a file with a .zip extension"),
         "subjectEmail":
-            MessageLookupByLibrary.simpleMessage("Contact from App eXe Reader"),
+            MessageLookupByLibrary.simpleMessage("Contact from App eXeReader"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "titleHelpPart02":
             MessageLookupByLibrary.simpleMessage("Upload projects"),

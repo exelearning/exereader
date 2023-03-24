@@ -610,10 +610,10 @@ class S {
     );
   }
 
-  /// `Contact from App eXe Reader`
+  /// `Contact from App eXeReader`
   String get subjectEmail {
     return Intl.message(
-      'Contact from App eXe Reader',
+      'Contact from App eXeReader',
       name: 'subjectEmail',
       desc: '',
       args: [],

@@ -2,7 +2,7 @@
     package="com.samuelsoto.exereader">
 
     <application
-        android:label="eXe Reader"
+        android:label="eXeReader"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic="true">

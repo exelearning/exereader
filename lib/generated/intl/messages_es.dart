@@ -47,7 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "drawerSuggestions":
             MessageLookupByLibrary.simpleMessage("Sugerencias"),
         "errorDownloadResource": MessageLookupByLibrary.simpleMessage(
-            "Se ha producido un error al descargar el recurso"),
+            "Error al descargar el recurso. Tal vez sea de acceso restringido."),
         "errorImportProject":
             MessageLookupByLibrary.simpleMessage("Error al importar recurso"),
         "floatingImport": m3,
@@ -87,9 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "helpPart02": MessageLookupByLibrary.simpleMessage(
             "Tenemos distintas opciones para cargar un proyecto (archivo comprimido zip) en eXeReader: \n\n- \"Recursos Cedec\". Podemos descargar recursos directamente desde la web de Cedec, seleccionando la opción \"Opciones de descarga\" > \"Descarga de recurso\" del recurso que elijamos. \n\n- \"Descargar recurso\". Podemos indicar la URL directa de un archivo o el enlace de Drive, Dropbox o OneCloud/NextCloud en el que tengamos alojado el archivo zip. \n\n- \"Importar recurso\". Podemos cargar un proyecto que ya tenemos descargado en nuestro dispositivo."),
         "helpPart03": MessageLookupByLibrary.simpleMessage(
-            "En la barra superior encontramos dos iconos. El de la izquierda muestra el menú y el de la derecha abrirá la barra de búsqueda de proyectos."),
+            "En la barra superior encontramos dos iconos. El de la izquierda muestra el menú y el de la derecha abre la barra de búsqueda de proyectos."),
         "helpPart04": MessageLookupByLibrary.simpleMessage(
-            "En el menú lateral encontramos varias opciones. La primera nos llevará a la lista de proyectos. \n\n El resto contiene información sobre la aplicación. Te animamos a leerla."),
+            "En el menú lateral encontramos varias opciones. La primera nos lleva a la lista de proyectos. \n\n El resto contiene información sobre la aplicación. Te animamos a leerla."),
         "helpPart05": MessageLookupByLibrary.simpleMessage(
             "El buscador de proyectos permite encontrar proyectos ya cargados en la aplicación."),
         "helpPart06": MessageLookupByLibrary.simpleMessage(
@@ -108,11 +108,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "resourceNoFound": MessageLookupByLibrary.simpleMessage(
             "No se han encontrado proyectos con los criterios de búsqueda aplicados"),
         "resourceNotValid":
-            MessageLookupByLibrary.simpleMessage("El recurso no es válido"),
+            MessageLookupByLibrary.simpleMessage("El recurso no es válido. Tal vez no sea un zip creado con eXeLearning."),
         "resourceNotValidZipExtension": MessageLookupByLibrary.simpleMessage(
             "El recurso no es válido. Debe ser archivo con extensión .zip"),
         "subjectEmail": MessageLookupByLibrary.simpleMessage(
-            "Contacto desde App eXe Reader"),
+            "Contacto desde App eXeReader"),
         "title": MessageLookupByLibrary.simpleMessage("Título"),
         "titleHelpPart02":
             MessageLookupByLibrary.simpleMessage("Cargar proyectos"),
