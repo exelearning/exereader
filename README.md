@@ -1,4 +1,10 @@
-# eXeReader
+**This branch of eXeReader will be discontinued on 2023-03-24.** No patch releases will be made, even for critical security issues.
+
+eXeReader 1.0 (this version) works only on Android, and not on the latest Android versions. 
+
+Later versions of eXeReader work on Mac/iOS too. Please see the main branch of this project for details.
+
+# eXeReader [1.0]
 
 eXeReader is a GPL2+ free/libre Android app to read eXeLearning contents.
 
