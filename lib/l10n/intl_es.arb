@@ -82,7 +82,7 @@
   "@helpPart07": {},
   "questionDeleteProject": "¿Quieres eliminar este proyecto?",
   "@questionDeleteProject": {},
-  "resourceDuplicate": "Este recurso ya está importado",
+  "resourceDuplicate": "El recurso ya se había importado",
   "@resourceDuplicate": {},
   "resourceNotValid": "El recurso no es válido. Tal vez no sea un zip creado con eXeLearning.",
   "@resourceNotValid": {},
@@ -114,6 +114,6 @@
   "@license": {},
   "subjectEmail": "Contacto desde App eXeReader",
   "@subjectEmail": {},
-  "errorImportProject": "Error al importar recurso",
+  "errorImportProject": "Error al importar el recurso",
   "@errorImportProject": {}
 }

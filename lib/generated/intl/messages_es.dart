@@ -49,7 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorDownloadResource": MessageLookupByLibrary.simpleMessage(
             "Error al descargar el recurso. Tal vez sea de acceso restringido."),
         "errorImportProject":
-            MessageLookupByLibrary.simpleMessage("Error al importar recurso"),
+            MessageLookupByLibrary.simpleMessage("Error al importar el recurso"),
         "floatingImport": m3,
         "floatingOptionCEDECResources":
             MessageLookupByLibrary.simpleMessage("Recursos CEDEC"),
@@ -104,7 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resourceAdded": MessageLookupByLibrary.simpleMessage(
             "Recurso añadido correctamente.\n\nNombre: "),
         "resourceDuplicate": MessageLookupByLibrary.simpleMessage(
-            "Este recurso ya está importado"),
+            "El recurso ya se había importado"),
         "resourceNoFound": MessageLookupByLibrary.simpleMessage(
             "No se han encontrado proyectos con los criterios de búsqueda aplicados"),
         "resourceNotValid":
