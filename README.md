@@ -22,7 +22,7 @@ Dropbox, OwnCloud or NextCloud, or just paste a valid zip URL.
 
 ## About
 
-Copyright 2023: Samuel Soto Paredes, Sergio Gracia Sánchez, Antonio Paniagua Navarro and project contributors.  
+Copyright 2023: Samuel Soto Paredes and project contributors.  
 
 Copyright 2021: Elena Isabel Nofuentes Méndez (original developer) and project contributors.  
 
