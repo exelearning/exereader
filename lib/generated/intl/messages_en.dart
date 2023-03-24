@@ -56,7 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "floatingOptionDownloadResources":
             MessageLookupByLibrary.simpleMessage("Download resource"),
         "floatingOptionImportResource":
-            MessageLookupByLibrary.simpleMessage("Import resource"),
+            MessageLookupByLibrary.simpleMessage("Open resource"),
         "floatingUrl2InputTitle": MessageLookupByLibrary.simpleMessage(
             "Enter the link type and URL of the resource"),
         "floatingUrlErrorContent": MessageLookupByLibrary.simpleMessage(

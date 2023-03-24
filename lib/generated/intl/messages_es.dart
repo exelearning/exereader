@@ -56,7 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "floatingOptionDownloadResources":
             MessageLookupByLibrary.simpleMessage("Descargar recurso"),
         "floatingOptionImportResource":
-            MessageLookupByLibrary.simpleMessage("Importar recurso"),
+            MessageLookupByLibrary.simpleMessage("Abrir recurso"),
         "floatingUrl2InputTitle": MessageLookupByLibrary.simpleMessage(
             "Introduce el tipo de enlace y URL del recurso"),
         "floatingUrlErrorContent": MessageLookupByLibrary.simpleMessage(
@@ -85,7 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "helpPart01": MessageLookupByLibrary.simpleMessage(
             "eXeReader es un aplicación que sirve para leer contenidos creados con eXeLearning (exelearning.net). \n\nEsta aplicación libre y gratuita, con licencia GPL2+, permite visualizar proyectos creados con eXeLearning y exportados como sitio web (archivo comprimido zip)."),
         "helpPart02": MessageLookupByLibrary.simpleMessage(
-            "Tenemos distintas opciones para cargar un proyecto (archivo comprimido zip) en eXeReader: \n\n- \"Recursos Cedec\". Podemos descargar recursos directamente desde la web de Cedec, seleccionando la opción \"Opciones de descarga\" > \"Descarga de recurso\" del recurso que elijamos. \n\n- \"Descargar recurso\". Podemos indicar la URL directa de un archivo o el enlace de Drive, Dropbox o OneCloud/NextCloud en el que tengamos alojado el archivo zip. \n\n- \"Importar recurso\". Podemos cargar un proyecto que ya tenemos descargado en nuestro dispositivo."),
+            "Tenemos distintas opciones para cargar un proyecto (archivo comprimido zip) en eXeReader: \n\n- \"Recursos Cedec\". Podemos descargar recursos directamente desde la web de Cedec, seleccionando la opción \"Opciones de descarga\" > \"Descarga de recurso\" del recurso que elijamos. \n\n- \"Descargar recurso\". Podemos indicar la URL directa de un archivo o el enlace de Drive, Dropbox o OneCloud/NextCloud en el que tengamos alojado el archivo zip. \n\n- \"Abrir recurso\". Podemos cargar un proyecto que ya tenemos descargado en nuestro dispositivo."),
         "helpPart03": MessageLookupByLibrary.simpleMessage(
             "En la barra superior encontramos dos iconos. El de la izquierda muestra el menú y el de la derecha abre la barra de búsqueda de proyectos."),
         "helpPart04": MessageLookupByLibrary.simpleMessage(

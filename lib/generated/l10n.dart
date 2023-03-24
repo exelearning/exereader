@@ -390,10 +390,10 @@ class S {
     );
   }
 
-  /// `There are different options for uploading a project (ZIP file) to eXeReader: \n\n- "Cedec resources". We can download resources directly from the Cedec website, by selecting the option "Download options" > "Download resource" in the selected resource. \n\n- "Download resource". We can enter a Drive, Dropbox or OneCloud/NextCloud shared link where the ZIP file is hosted or a direct link. \n\n- "Import resource". We can load a project that we have already downloaded on our device.`
+  /// `There are different options for uploading a project (ZIP file) to eXeReader: \n\n- "Cedec resources". We can download resources directly from the Cedec website, by selecting the option "Download options" > "Download resource" in the selected resource. \n\n- "Download resource". We can enter a Drive, Dropbox or OneCloud/NextCloud shared link where the ZIP file is hosted or a direct link. \n\n- "Open resource". We can load a project that we have already downloaded on our device.`
   String get helpPart02 {
     return Intl.message(
-      'There are different options for uploading a project (ZIP file) to eXeReader: \n\n- "Cedec resources". We can download resources directly from the Cedec website, by selecting the option "Download options" > "Download resource" in the selected resource. \n\n- "Download resource". We can enter a Drive, Dropbox or OneCloud/NextCloud shared link where the ZIP file is hosted or a direct link. \n\n- "Import resource". We can load a project that we have already downloaded on our device.',
+      'There are different options for uploading a project (ZIP file) to eXeReader: \n\n- "Cedec resources". We can download resources directly from the Cedec website, by selecting the option "Download options" > "Download resource" in the selected resource. \n\n- "Download resource". We can enter a Drive, Dropbox or OneCloud/NextCloud shared link where the ZIP file is hosted or a direct link. \n\n- "Open resource". We can load a project that we have already downloaded on our device.',
       name: 'helpPart02',
       desc: '',
       args: [],

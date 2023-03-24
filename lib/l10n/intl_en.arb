@@ -30,7 +30,7 @@
   "@floatingOptionCEDECResources": {},
   "floatingOptionDownloadResources": "Download resource",
   "@floatingOptionDownloadResources": {},
-  "floatingOptionImportResource": "Import resource",
+  "floatingOptionImportResource": "Open resource",
   "@floatingOptionImportResource": {},
   "floatingUrlErrorContent": "The URL does not contain a valid project",
   "@floatingUrlErrorContent": {},
