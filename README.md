@@ -8,7 +8,7 @@ eXeReader is built using Flutter.
 
 ## Getting started
 
-1. Download and install it like any other app.
+1. Download and install it like any other app: [eXeReader for Android (Google Play)](https://play.google.com/store/apps/details?id=net.exelearning.exereader) - [eXeReader for iPad or iPhone (Mac App Store)](https://apps.apple.com/es/app/exereader/id6444196265)
 2. Open eXeReader and click on the + icon at the bottom of the screen.
 3. Open or download your eXeLearning content.
 
