@@ -1,3 +1,14 @@
+## ⛔️ DEPRECATED
+
+> [!WARNING]
+> This repository is **deprecated** and is no longer maintained.
+>
+> This project has been discontinued and is no longer supported.
+>
+> Please use https://github.com/exelearning/exeviewer instead.
+>
+> This repository is kept for historical reference only.
+
 # eXeReader
 
 eXeReader is a GPL2+ free/libre Android + Mac/iOS app to read eXeLearning contents.
